@@ -13,7 +13,7 @@ kermit = os.getenv('KERMIT')
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind to localhost and port 12345
-sock.bind(('192.168.1.164', 12345))
+sock.bind((kermit, 12345))
 
 # Start listening
 sock.listen(1)
@@ -26,4 +26,3 @@ print("Received:", data)
 # Clean up
 conn.close()
 sock.close()
-
